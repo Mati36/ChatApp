@@ -39,5 +39,5 @@ export default {
       messagingSenderId: process.env.MESSAGING_SENDERLD,
       appId: process.env.APP_ID
     }
-  }
+  },
 }
