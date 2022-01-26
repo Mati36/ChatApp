@@ -18,20 +18,46 @@ export function Login({ navigation }) {
     }
 
     return (
-        <View style={{ flex: 1,
-            backgroundColor: '#fff',}}>
-            <Image source={HeaderImg} style={{ width: '100%',
-        height:340,
-        position:'absolute',
-        top:0,
-        resizeMode:'cover',}}/>
-            <View style={{ width: '100%',height: '75%',position: 'absolute',bottom:0,
-        backgroundColor: '#fff',borderBottomEndRadius:60,}}/>
+        <View style={style.container}>
+            <Image source={HeaderImg} style={style.backImage}/>
+            <View style={style.whiteSheet}/>
+            <SafeAreaView style={style.form}>
+                <Text style={style.title}>Login</Text>
+                <TextInput 
+                    style={style.input}
+                    placeholder='Enter email'
+                    autoCapitalize='none'
+                    keyboardType='email-address'
+                    textContentType='EmailAddress'
+                    autoFocus={true}
+                    value={email}
+                    onChange={(text) => setEmail(text)}
+                />
+                <TextInput 
+                    style={style.input}
+                    placeholder='Enter password'
+                    autoCapitalize='none'
+                    textContentType='password'
+                    autoCorrect={false}
+                    secureTextEntry={true}
+                    value={password}
+                    onChange={(text) => setPassword(text)}
+                />
+                <TouchableOpacity style={style.button} onPress={onHandleLogin}>
+                    <Text style={{fontWeight:'bold', fontSize:18, color:'#fff'}} >Log In</Text>
+                </TouchableOpacity>
+                <View>
+                <Text style={{fontSize:14, color:'gray', fontWeight:'600'}} >If you don’t have an account register You can </Text>
+                <TouchableOpacity  onPress={() => navigation.navigate("Register")}>
+                    <Text style={{fontWeight:'600', fontSize:14, color:'#E94057'}}>Register</Text>
+                </TouchableOpacity>
+                </View>
+            </SafeAreaView>
         </View>
     )
 }
 
-export const style = () => StyleSheet.create({
+const style = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor: '#fff',
@@ -72,7 +98,7 @@ export const style = () => StyleSheet.create({
         marginHorizontal:30,
     },
     button: {
-        backgroundColor: '#f57c00',
+        backgroundColor: '#E94057',
         height: 58,
         borderRadius: 10,
         justifyContent: 'center',
