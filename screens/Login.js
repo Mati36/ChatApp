@@ -28,10 +28,10 @@ export function Login({ navigation }) {
                     placeholder='Enter email'
                     autoCapitalize='none'
                     keyboardType='email-address'
-                    textContentType='EmailAddress'
+                    textContentType='emailAddress'
                     autoFocus={true}
                     value={email}
-                    onChange={(text) => setEmail(text)}
+                    onChangeText={(text) => setEmail(text)}
                 />
                 <TextInput 
                     style={style.input}
@@ -41,14 +41,14 @@ export function Login({ navigation }) {
                     autoCorrect={false}
                     secureTextEntry={true}
                     value={password}
-                    onChange={(text) => setPassword(text)}
+                    onChangeText={(text) => setPassword(text)}
                 />
                 <TouchableOpacity style={style.button} onPress={onHandleLogin}>
                     <Text style={{fontWeight:'bold', fontSize:18, color:'#fff'}} >Log In</Text>
                 </TouchableOpacity>
                 <View>
                 <Text style={{fontSize:14, color:'gray', fontWeight:'600'}} >If you don’t have an account register You can </Text>
-                <TouchableOpacity  onPress={() => navigation.navigate("Register")}>
+                <TouchableOpacity  onPress={() => navigation.navigate("Singup")}>
                     <Text style={{fontWeight:'600', fontSize:14, color:'#E94057'}}>Register</Text>
                 </TouchableOpacity>
                 </View>
