@@ -7,8 +7,7 @@ import { signOut } from "firebase/auth";
 import { auth } from '../config/firebase'; 
 import {AntDesign} from '@expo/vector-icons';
 
-const iconImg = require('../resouces/img/Avatar.svg');
-
+const iconImg = require("../common/img/avatar.png");
 export function Home(){
     
     const navigation = useNavigation();

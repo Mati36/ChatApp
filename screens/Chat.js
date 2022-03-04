@@ -81,7 +81,7 @@ export function Chat(){
             onSend={messages => onSend(messages)}
             user={{
                 _id: auth?.currentUser?.email,
-                avatar: '../resouces/img/Avatar.png'
+                avatar: '../common/img/avatar.png'
             }}
         /> 
     )
