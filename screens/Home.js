@@ -7,12 +7,13 @@ import { signOut } from "firebase/auth";
 import { auth } from '../config/firebase'; 
 import {AntDesign} from '@expo/vector-icons';
 
-const iconImg = require("../common/img/avatar.png");
+const iconImg = "https://i.pravatar.cc/";
 export function Home(){
     
     const navigation = useNavigation();
 
     const onSingOut = () => {
+        console.log("auth ",auth);
         signOut(auth).catch(err => console.log(err));
     }
 
@@ -28,7 +29,7 @@ export function Home(){
                     flexDirection:'row',
                 }}>
                     
-                    <Image source={{ uri: '../resouces/img/Avatar.png' }} 
+                    <Image source={{ uri: iconImg }} 
                         style={{
                             justifyContent:'flex-end',
                             width: 50,

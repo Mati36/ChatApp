@@ -11,6 +11,7 @@ export function Singup({ navigation }) {
     const [password, setPassword] = useState("");
 
     const onHandleSingup = () => {
+        const avatar = require("../common/img/avatar.png");
         if ( email !== '' && password !== '') {
             createUserWithEmailAndPassword(auth,email,password)
             .then( () => {navigation.navigate("Login")} )

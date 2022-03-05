@@ -43,7 +43,7 @@ export function Chat(){
     }, [navigation]);
 
     useLayoutEffect(()=>{
-        const collectionRef = collection(database, 'chat');
+        const collectionRef = collection(database, 'chats');
         const q = query(collectionRef, orderBy('createdAt','desc'));
         console.log("query ",q);
         const unsubscribe = onSnapshot(q, async snapshot => {
@@ -67,12 +67,12 @@ export function Chat(){
             GiftedChat.append(previousMessages, messages)});
         const {_id, createdAt, text, user} = messages[0];
         
-        addDoc(collection(database,'chat'),{
+        addDoc(collection(database,'chats'),{
             _id,
             createdAt,
             text,
             user
-        }).catch(err => console.log(`Error DB ${err}, db ${collection(database,'chat')}`));
+        }).catch(err => console.log(`Error DB ${err}`));
     },[]);
 
     return(
@@ -81,7 +81,11 @@ export function Chat(){
             onSend={messages => onSend(messages)}
             user={{
                 _id: auth?.currentUser?.email,
-                avatar: '../common/img/avatar.png'
+                avatar: 'https://i.pravatar.cc/',
+            }}
+            showUserAvatar={true}
+            messagesContainerStyle={{
+                backgroundColor:'#fff'
             }}
         /> 
     )
