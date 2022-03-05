@@ -48,7 +48,7 @@ export function Home(){
                         }}
                         onPress={onSingOut}
                     >
-                        <AntDesign name="logout" size={24} color={'#E94057'} style={{ marginRight: 10 }} />
+                        <AntDesign name="logout" size={24} color={'#E94057'} style={{ marginRight: 10, alignSelf:'center' }} />
                     </TouchableOpacity>
                 </View>
             )
@@ -61,7 +61,7 @@ navigation
                 onPress={() => navigation.navigate("Chat")}
                 style={styles.chatButton}
             >
-                <Entypo name="chat" size={45} color={'#E94057'}/>
+                <Entypo name="chat" size={45} color={'#E94057'} style={{ alignSelf:'center', padding:5 }}/>
             </TouchableOpacity>
         </View>
     )
@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
     chatButton: {
         height: 60,
         width:60,
-        borderRadius: 10,
+        borderRadius: 60,
         justifyContent: 'flex-end',
         alignItems: 'center',
         alignSelf:'flex-end',
-        alignContent:'flex-end',
+        alignContent:'center',
         shadowColor: '#3333',
         shadowOffset:{
             width:0,
