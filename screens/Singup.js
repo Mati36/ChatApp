@@ -14,7 +14,7 @@ export function Singup({ navigation }) {
         const avatar = require("../common/img/avatar.png");
         if ( email !== '' && password !== '') {
             createUserWithEmailAndPassword(auth,email,password)
-            .then( () => {navigation.navigate("Login")} )
+            .then( () => {console.log("susces");} )
             .catch( error =>{
                 alert("Sing Up Error ",error.message); 
                 console.log("Sing Up Error ",error.message); 
