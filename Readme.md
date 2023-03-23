@@ -19,3 +19,7 @@ This project is a real-time chat developed in **React Native Expo** [React Nativ
        > - execute command **export NODE_OPTIONS="--no-warnings --openssl-legacy-provider"**
        > It may be that you have an error when you want to open the project with code . remove the variable run your project and re-export the variable
   - To stop project press Ctrl+C 
+  
+  ### Important!
+  This ChatApp project on Google Cloud is closed.
+  So the app is not working.
